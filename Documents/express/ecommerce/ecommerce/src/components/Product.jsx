@@ -1,19 +1,23 @@
 import React from 'react'
 import './Product.css'
-function Product( props) {
+import { useContext } from 'react';
+import {CartContext} from '../context/Cartcontext';
 
-    const{ productName, price, productImage } = props.data;
+
+function Product( props) {
+  const {cart,addToCart,removeFromCart} = useContext(CartContext);
+    
   return (
     <div className='product'>  
      <div className='product-container'>
-            <img src={productImage} alt={productName} />
+            <img src={props.data.productImage} alt={props.data.productName} />
             <div className='product-info'>
-                <p className='title'>{productName}</p>
-                <p className='price'>${price}</p>
+                <p className='title'>{props.data.productName}</p>
+                <p className='price'>${props.data.price}</p>
             </div>
-            <button className='product-button'>Add to Cart</button>
+            <button className='product-button' onClick={()=> addToCart(props.data.id)} >Add to Cart({cart[props.data.id] || 0})</button>
         </div>
     </div>
   );
-}
+} 
 export default Product;

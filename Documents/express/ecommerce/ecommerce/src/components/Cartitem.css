@@ -1,0 +1,9 @@
+.cart-item-button{
+    background-color: rgb(148, 202, 218);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}

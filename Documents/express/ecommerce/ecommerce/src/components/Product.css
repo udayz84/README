@@ -154,3 +154,8 @@
     margin: 10px;
     cursor: pointer;
 }
+
+.product-button:hover {
+  background-color: skyblue;
+  color: #eee6e6;
+}
